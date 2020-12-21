@@ -18,7 +18,7 @@ this analysis. You will be able to test your database and ETL pipeline by
 running queries given to you by the analytics team from Sparkify and
 compare your results with their expected results.
 
-## File Structure
+## Project Steps
 
 ### Step 1
 
@@ -49,6 +49,21 @@ compare your results with their expected results.
     etl.py file created in step 3
     
  - Create and run a test.ipynb file in Jupyter
+
+## File Structure 
+
+To get started with the project, go to the workspace on the next page, where you'll find the project template files. You can work on your project and submit your work through this workspace. Alternatively, you can download the project template files from the Resources folder if you'd like to develop your project locally.
+
+In addition to the data files, the project workspace includes six files:
+
+1. `sql_queries.py` contains all your sql queries, and is imported into the last three files above. 
+2.  `create_tables.py` drops and creates your tables. You run this file to reset your tables before each time you run your ETL scripts.
+3.  `etl.py` reads and processes files from `song_data`  and `log_data` and loads them into your tables. You can fill this out based on your work in the ETL notebook.
+4. `etl.ipynb` reads and processes a single file from `song_data` and `log_data` and loads the data into your tables. This notebook contains detailed instructions on the ETL process for each of the tables.
+5. `test.ipynb` displays the first few rows of each table to let you check your database.
+6. `README.md` provides discussion on your project.
+  
+
 
 ## Datasets
 
@@ -236,9 +251,5 @@ ALTER TABLE ONLY public.users
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1MDk4NjE2NCwxODk1NzY3NjE1LDk2OD
-MzMDAyNCw1Nzg2NTUzMDksLTYxMDUxNjc5OSwtMTY3NDA1MTM3
-OSwyMTM1MzM4ODE3LC0xMDA1NDE5MDU0LDEwNTQ1NjMzOTksNz
-gzOTI3NjM1LDEwMjU4NDA5NTAsMTUwNDI4NzAzLC01NjU3MDQw
-XX0=
+eyJoaXN0b3J5IjpbLTE4MjcxODEzNzldfQ==
 -->
