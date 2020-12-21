@@ -94,7 +94,7 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 
 ## Database Schema, Tables and Queries
 
-I installed Postgres 13, connected the python files to Postgres, and ran the python files on my local computer.  After running the python files go to the command line and enter: 
+I installed Postgres 13, connected the python files to Postgres, and ran the python files on my local computer.  After running the python files I went to the command line and enter: 
 **C:\Program Files\PostgreSQL\13\bin>pg_dump -U postgres -s sparkifydb > C:\data\sparkify_schema.sql**
 **Password:**
 
