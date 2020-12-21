@@ -7,6 +7,13 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    ETL Process
+    * Import Song data into song table
+    * Import Artist data into artist table
+    """
+
+
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -20,6 +27,13 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+     ETL Process:
+     * Import data into song table
+     * Import data into user table
+     * Import data into time table
+     """
+
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -65,6 +79,9 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    """
+    Process actions in order to achieve specific results.
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
@@ -82,16 +99,31 @@ def process_data(cur, conn, filepath, func):
         conn.commit()
         print('{}/{} files processed.'.format(i, num_files))
 
-
 def main():
-    conn = psycopg2.connect("host=localhost  dbname=sparkifydb  user=postgres  password=Coal4462")
+    """
+    Accesses sparkifyfb database and imports data from files
+    """
+    
+    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
     cur = conn.cursor()
 
-    process_data(cur, conn, filepath='C:/Users/Shahleem/Desktop/Udacity Project/data/song_data', func=process_song_file)
-    process_data(cur, conn, filepath='C:/Users/Shahleem/Desktop/Udacity Project/data/log_data', func=process_log_file)
+    process_data(cur, conn, filepath='data/song_data', func=process_song_file)
+    process_data(cur, conn, filepath='data/log_data', func=process_log_file)
 
     conn.close()
 
 
 if __name__ == "__main__":
     main()
+    
+"""
+
+/*************************************************
+* Title: <BrittaInData/Data_Engineering>
+* Author: <Britta Bettendorf>
+* Date: <12/17/2020>
+* Code version: <Python>
+* Availability: <https://github.com/BrittaInData/Data_Engineering/tree/master/Project_1-Data-Modeling-with-Postgres>
+*************************************************/
+
+"""
